@@ -1,5 +1,5 @@
 server:
-  port: 9088
+  port: 9089
 
 eureka:
   instance:
@@ -10,4 +10,4 @@ eureka:
     #由于注册中心的职责就是维护服务实例,它并不需要去检索服务,所以也设置为false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:9089/eureka-backup/
+      defaultZone: http://localhost:9088/eureka/
