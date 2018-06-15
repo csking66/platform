@@ -57,5 +57,7 @@
   <modules>
     <module>eureka</module>
     <module>eureka-backup</module>
+    <module>eureka-server</module>
+    <module>eureka-client</module>
   </modules>
 </project>
