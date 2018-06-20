@@ -1,0 +1,7 @@
+server:
+  port: 9021
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@eureka-backup:9089/eureka/
