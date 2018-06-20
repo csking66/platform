@@ -1,4 +1,4 @@
-package com.eureka.server.controller;
+package com.eureka.server.backup.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +12,7 @@ public class ServerController {
 	 
 	 @RequestMapping(value = "/hello", method = RequestMethod.GET)
 	 public String index() {
-		 logger.info("这是服务端1");
+		 logger.info("这是服务端2");
 		 return "Hello World";
 	 }
 
