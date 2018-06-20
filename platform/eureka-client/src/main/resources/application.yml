@@ -4,4 +4,4 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:123456@eureka-master:9088/eureka/
+      defaultZone: http://admin:123456@eureka-backup:9089/eureka/
