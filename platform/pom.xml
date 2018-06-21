@@ -76,5 +76,6 @@
     <module>eureka-master</module>
     <module>Domain</module>
     <module>domain</module>
+    <module>core</module>
   </modules>
 </project>
