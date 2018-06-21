@@ -18,6 +18,6 @@ public class ConsumerController {
 	
 	@RequestMapping(value = "/hello",method = RequestMethod.GET)
 	public String helloController() {
-        return restTemplate.getForEntity("http://eureka-server/hello", String.class).getBody();
+        return restTemplate.getForEntity("http://eureka-server/hello?name=cs_wang", String.class).getBody();
     }
 }

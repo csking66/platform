@@ -15,6 +15,6 @@ public class ConsumerController {
 	
 	@RequestMapping(value = "/hello",method = RequestMethod.GET)
 	public String helloController() {
-        return api.hello();
+        return api.hello("cs_wang");
     }
 }

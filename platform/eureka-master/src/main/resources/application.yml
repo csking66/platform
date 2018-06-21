@@ -10,7 +10,7 @@ eureka:
     #由于注册中心的职责就是维护服务实例,它并不需要去检索服务,所以也设置为false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://admin:123456@eureka-backup:9088/eureka/
+      defaultZone: http://admin:123456@eureka-backup:9089/eureka/
 security:
   user:
     name: admin
