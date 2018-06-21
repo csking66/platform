@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.domain.entity.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Api(value = "ConsumerController", tags = "消费端接口")
 @RestController
@@ -30,6 +31,7 @@ public class ConsumerController {
     }
 	
 	@ApiOperation(value = "获取用户", notes = "获取用户")
+	@HystrixCommand(fallbackMethod = "resultError")
 	@RequestMapping(value = "/getUser",method = RequestMethod.GET)
 	public User getUser() {
 		User user = new User();
@@ -39,5 +41,9 @@ public class ConsumerController {
 		ResponseEntity<User> response = restTemplate.postForEntity("http://eureka-server/getUser", user,User.class);
         return response.getBody();        		
     }
+	
+	public String resultError() {
+		return "sorry,error!";
+	}
 	
 }

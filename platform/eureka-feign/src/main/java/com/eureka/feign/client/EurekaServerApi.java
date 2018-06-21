@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.domain.entity.User;
+import com.eureka.feign.client.impl.EurekaServerApiImpl;
 
-@FeignClient(value = "eureka-server")
+@FeignClient(value = "eureka-server",fallback = EurekaServerApiImpl.class)
 public interface EurekaServerApi {
 	
 	@RequestMapping(value = "/hello/",method = RequestMethod.GET)
