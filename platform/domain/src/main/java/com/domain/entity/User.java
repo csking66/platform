@@ -18,6 +18,9 @@ public class User implements Serializable{
 	
 	@ApiModelProperty(value = "年龄")
 	private Integer age;
+	
+	@ApiModelProperty(value = "备注")
+	private String remark;
 
 	public Long getId() {
 		return id;
@@ -42,6 +45,16 @@ public class User implements Serializable{
 	public void setAge(Integer age) {
 		this.age = age;
 	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	
 	
 	
 	
