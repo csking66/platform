@@ -62,5 +62,7 @@
     <module>eureka-server-backup</module>
     <module>eureka-feign</module>
     <module>eureka-master</module>
+    <module>Domain</module>
+    <module>domain</module>
   </modules>
 </project>
