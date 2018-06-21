@@ -49,7 +49,6 @@ public class Swagger2Config extends WebMvcConfigurerAdapter{
 	}
 
 	private ApiInfo apiInfo() {
-
-		return new ApiInfoBuilder().title("后端api文档").version("5.0").build();
+		return new ApiInfoBuilder().title("api文档").version("1.0").build();
 	}
 }
