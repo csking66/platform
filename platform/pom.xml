@@ -77,5 +77,6 @@
     <module>Domain</module>
     <module>domain</module>
     <module>core</module>
+    <module>zuul</module>
   </modules>
 </project>

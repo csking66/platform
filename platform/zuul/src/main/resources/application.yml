@@ -1,8 +1,6 @@
 server:
-  port: 9021
-feign:
-  hystrix:
-    enabled: true
+  port: 9031
+
 eureka:
   client:
     serviceUrl:
