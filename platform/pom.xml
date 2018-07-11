@@ -78,5 +78,7 @@
     <module>domain</module>
     <module>core</module>
     <module>zuul</module>
+    <module>tool</module>
+    <module>zipkin</module>
   </modules>
 </project>
