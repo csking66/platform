@@ -28,12 +28,16 @@ public class User extends BaseEntity<Long>{
 	private String address;
 	
 	@ApiModelProperty(value = "账号")
-	@Column(length = 500)
+	@Column(length = 50)
 	private String account;
 	
 	@ApiModelProperty(value = "密码")
-	@Column(length = 500)
+	@Column(length = 50)
 	private String password;
+	
+	@ApiModelProperty(value = "备注")
+	@Column(length = 500)
+	private String remark;
 	
 	public String getName() {
 		return name;
@@ -74,9 +78,13 @@ public class User extends BaseEntity<Long>{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
-	
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 
 }
