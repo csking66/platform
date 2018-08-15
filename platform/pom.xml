@@ -80,5 +80,6 @@
     <module>zuul</module>
     <module>tool</module>
     <module>zipkin</module>
+    <module>es</module>
   </modules>
 </project>

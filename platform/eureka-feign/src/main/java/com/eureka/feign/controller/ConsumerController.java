@@ -31,6 +31,7 @@ public class ConsumerController {
 		user.setId(1L);
 		user.setName("cs_wang");
 		user.setAge(30);
+		
         return api.getUser(user);        		
     }
 }

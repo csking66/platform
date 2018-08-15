@@ -3,50 +3,38 @@ package com.domain.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-import org.springframework.expression.Expression;
-import org.springframework.expression.ExpressionParser;
-import org.springframework.expression.spel.standard.SpelExpressionParser;
+import com.domain.base.BaseEntity;
 
 @ApiModel(value = "User ", description = "用户")
-public class User implements Serializable{
+@Entity
+@Table(name = "user")
+public class User extends BaseEntity<Long>{
 
 	private static final long serialVersionUID = 2424944657192343647L;
 	
-	@ApiModelProperty(value = "ID")
-	private Long id;
-	
 	@ApiModelProperty(value = "姓名")
+	@Column(length = 50)
 	private String name;
 	
 	@ApiModelProperty(value = "年龄")
 	private Integer age;
 	
-	@ApiModelProperty(value = "备注")
-	private String remark;
+	@ApiModelProperty(value = "地址")
+	@Column(length = 500)
+	private String address;
 	
-	public Integer sum(int i, int j){
-	      return i + j;
-	}
+	@ApiModelProperty(value = "账号")
+	@Column(length = 500)
+	private String account;
 	
-	public Integer iff(String expre, int i, int j){
-	    ExpressionParser parser = new SpelExpressionParser();
-	    Expression exp2 =parser.parseExpression(expre);
-	    if(exp2.getValue(exp2,Boolean.class)){
-	    	return i;
-	    }
-	    return j;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
+	@ApiModelProperty(value = "密码")
+	@Column(length = 500)
+	private String password;
+	
 	public String getName() {
 		return name;
 	}
@@ -63,14 +51,29 @@ public class User implements Serializable{
 		this.age = age;
 	}
 
-	public String getRemark() {
-		return remark;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setRemark(String remark) {
-		this.remark = remark;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 	
 	
