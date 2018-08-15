@@ -5,6 +5,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+
 @ApiModel(value = "User ", description = "用户")
 public class User implements Serializable{
 
@@ -21,6 +25,19 @@ public class User implements Serializable{
 	
 	@ApiModelProperty(value = "备注")
 	private String remark;
+	
+	public Integer sum(int i, int j){
+	      return i + j;
+	}
+	
+	public Integer iff(String expre, int i, int j){
+	    ExpressionParser parser = new SpelExpressionParser();
+	    Expression exp2 =parser.parseExpression(expre);
+	    if(exp2.getValue(exp2,Boolean.class)){
+	    	return i;
+	    }
+	    return j;
+	}
 
 	public Long getId() {
 		return id;
