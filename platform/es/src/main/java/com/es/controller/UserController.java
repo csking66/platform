@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.util.Assert;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,6 +41,13 @@ public class UserController {
 		Assert.notNull(loginParam.getAccount(), "account is required");
 		User user = userService.login(loginParam.getAccount(), loginParam.getPassword());
 		return new Result<User>(user);
+	}
+	
+	@ApiOperation(value = "新增数据",notes = "新增数据")
+	@PostMapping("/user/save")
+	public Result<User> save(@RequestBody User entity) {
+		userService.save(entity);
+		return new Result<User>(entity);
 	}
 
 }

@@ -13,6 +13,8 @@ public interface UserService {
 	 */
 	public User login(String account, String password);
 	
+	public void save(User user);
+	
 	
 	
 }

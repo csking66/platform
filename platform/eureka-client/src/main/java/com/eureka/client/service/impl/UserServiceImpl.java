@@ -30,4 +30,9 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
+	@HystrixCommand(fallbackMethod = "resultError")
+	public User addUser(User user) {
+		ResponseEntity<User> response = restTemplate.postForEntity("http://es/user/save", user,User.class);
+		return response.getBody();
+	}
 }
