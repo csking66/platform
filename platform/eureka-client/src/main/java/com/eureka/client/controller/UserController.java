@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.common.Result;
+import com.domain.dto.LoginParam;
 import com.domain.entity.User;
 import com.eureka.client.service.UserService;
 
@@ -31,5 +32,18 @@ public class UserController {
 		user.setAge(30);
 		user.setAddress(session.getId());
 		return new Result<User>(userService.addUser(user));
+	}
+	
+	@ApiOperation(value = "获取用户", notes = "获取用户")	
+	@RequestMapping(value = "/login",method = RequestMethod.POST)
+	public Result<User> getUser(HttpSession session) {
+		LoginParam param = new LoginParam();
+		param.setAccount("123");
+		param.setPassword("123");
+		User user = (User) session.getAttribute(param.getAccount());
+		if(user == null){
+			user = userService.login(param);
+		}
+		return new Result<User>(user);
 	}
 }
