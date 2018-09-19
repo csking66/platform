@@ -1,4 +1,4 @@
-package com.domain.util;
+package com.core.util;
 
 import org.apache.shiro.codec.Hex;
 import org.slf4j.Logger;

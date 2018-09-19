@@ -1,0 +1,5 @@
+server:
+  port: 9402
+spring:
+  application:
+    name: mq

@@ -1,4 +1,4 @@
-package com.domain.util;
+package com.core.util;
 
 import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
