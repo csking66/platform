@@ -1,6 +1,8 @@
 package com.domain.enums;
 
-public enum RabbitMQ {
+import com.domain.interfaces.QueueUtil;
+
+public enum RabbitMQ implements QueueUtil{
 	
 	/**
 	 * direct
@@ -15,7 +17,7 @@ public enum RabbitMQ {
 	
 	NOTICE_B("notice_b","notice", RabbitMQ.TOPIC),
 	
-	
+	REAULT("result"),
 	;
 	
 	public static final String DIRECT = "dir";

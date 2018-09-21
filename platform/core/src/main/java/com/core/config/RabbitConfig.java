@@ -5,6 +5,7 @@ import java.util.concurrent.TimeoutException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.TopicExchange;
@@ -52,7 +53,8 @@ public class RabbitConfig {
 	@Bean
 	public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
 		RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-		rabbitTemplate.setExchange(RabbitMQ.QUE_EXCHANGE);
+		//rabbitTemplate.setExchange(RabbitMQ.QUE_EXCHANGE);
+		//rabbitTemplate.setRoutingKey(RabbitMQ.REAULT.getKey());
 		rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());// 数据转换为json存入消息队列
 		return rabbitTemplate;
 	}
@@ -67,13 +69,15 @@ public class RabbitConfig {
 	@Bean
 	public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(SimpleRabbitListenerContainerFactoryConfigurer configurer,
 			ConnectionFactory connectionFactory) {
-
 		SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
-		configurer.configure(factory, connectionFactory);
+		factory.setAcknowledgeMode(AcknowledgeMode.MANUAL);
 		factory.setMessageConverter(new Jackson2JsonMessageConverter());
-		factory.setErrorHandler(errorHandler());// 消费错误处理
+		factory.setErrorHandler(errorHandler());// 消费错误处理		
+		configurer.configure(factory, connectionFactory);
 		return factory;
 	}
+	
+	
 	
 	/**
 	 * 直连交换机模式 que -> que

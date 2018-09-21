@@ -17,6 +17,13 @@ spring:
     username: cs
     password: Ab123456
     port: 5672
+    publisher-confirms: true 
+    publisher-returns: true
+    listener:
+        direct:
+           acknowledge-mode:manual
+        simple:
+           acknowledge-mode:manual
   datasource:
     url: jdbc:mysql://localhost:3306/es?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
