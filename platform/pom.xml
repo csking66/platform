@@ -46,7 +46,6 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>eureka</module>
 		<module>config</module>
 	</modules>
 </project>
