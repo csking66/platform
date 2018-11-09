@@ -1,0 +1,9 @@
+application:
+    name: config
+spring:
+  profiles:
+    active: dev
+security:
+  user:
+    name: admin
+    password: 123456
