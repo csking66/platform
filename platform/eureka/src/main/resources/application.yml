@@ -1,0 +1,17 @@
+server:
+  port: 8009
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false #是否向服务注册中心注册自己
+    fetchRegistry: false #是否检索服务
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+    server:
+      enable-self-preservation: false
+      eviction-interval-timer-in-ms: 5000
+security:
+  user:
+    name: admin
+    password: 123456

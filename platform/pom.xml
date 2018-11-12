@@ -48,5 +48,7 @@
 	<modules>
 		<module>config</module>
 		<module>eureka</module>
+		<module>zull</module>
+		<module>core</module>
 	</modules>
 </project>
