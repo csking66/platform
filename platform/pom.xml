@@ -50,5 +50,8 @@
 		<module>eureka</module>
 		<module>zull</module>
 		<module>core</module>
+		<module>domain</module>
+		<module>websocket</module>
+		<module>bpm</module>
 	</modules>
 </project>
