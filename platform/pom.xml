@@ -53,5 +53,8 @@
 		<module>domain</module>
 		<module>websocket</module>
 		<module>bpm</module>
+		<module>pmis</module>
+		<module>sos</module>
+		<module>es</module>
 	</modules>
 </project>
