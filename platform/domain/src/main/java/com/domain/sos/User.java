@@ -5,6 +5,10 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.domain.base.BaseEntity;
 
@@ -19,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 */
 @ApiModel(value = "User ", description = "用户")
 @Entity
-@Table(name = "es_user")
+@Table(name = "user")
 public class User extends BaseEntity<Long>{
 
 	private static final long serialVersionUID = 6597326777478953795L;
@@ -48,6 +52,8 @@ public class User extends BaseEntity<Long>{
 	private String email;
 	
 	@ApiModelProperty(value = "入职日期")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date entryTime;
 
 	public Long getCcid() {
