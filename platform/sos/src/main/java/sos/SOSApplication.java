@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SOSApplication {
 
-	@Value("${configClientKey}")
+	@Value("${document}")
     String configClientKey;
     
     @RequestMapping(value = "/getConf")
