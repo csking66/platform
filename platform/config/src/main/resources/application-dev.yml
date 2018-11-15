@@ -6,8 +6,4 @@ spring:
       server:
         git:
           uri: https://github.com/csking66/config.git
-       
-security:
-  user:
-    name: admin
-    password: 123456
+      label: master

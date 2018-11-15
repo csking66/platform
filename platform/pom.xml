@@ -54,7 +54,7 @@
 		<module>websocket</module>
 		<module>bpm</module>
 		<module>pmis</module>
-		<module>sos</module>
 		<module>es</module>
+		<module>sos</module>
 	</modules>
 </project>
