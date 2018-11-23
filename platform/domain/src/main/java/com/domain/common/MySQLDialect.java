@@ -5,9 +5,11 @@ import java.sql.Types;
 import org.hibernate.dialect.MySQL5InnoDBDialect;
 
 /**
- * database platform
  * 
- * @author 李强
+* @ClassName: MySQLDialect
+* @Description: mysql 可以保存json 格式， 如list map
+* @date 2018年11月23日
+*
  */
 public class MySQLDialect extends MySQL5InnoDBDialect {
 

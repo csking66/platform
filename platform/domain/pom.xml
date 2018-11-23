@@ -22,6 +22,11 @@
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!-- @NotBlank validation数据校验 -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
 		
 		<!-- es 储存 -->
 		<dependency>

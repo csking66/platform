@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.domain.base.BaseEntity;
@@ -40,14 +44,19 @@ public class User extends BaseEntity<Long>{
 	private String name;
 	
 	@ApiModelProperty(value = "账号")
-	@Column(length = 50)
+	@NotBlank(message = "{es.userName.empty}")
+	@Size(min = 6, max = 50, message = "{es.message.username.length}")
+	@Pattern(regexp = "(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]*)", message = "{es.message.username.regexp}")
 	private String accout;
 	
 	@ApiModelProperty(value = "密码")
-	@Column(length = 50)
+	@NotBlank(message = "{es.password.empty}")
+	@Size(min = 6, max = 512, message = "{es.message.password.length}")
+	@Pattern(regexp = "[a-zA-Z0-9]*", message = "{es.message.password.regexp}")
 	private String password;
 	
 	@ApiModelProperty(value = "邮件")
+	@Email
 	@Column(length = 100)
 	private String email;
 	
