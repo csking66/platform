@@ -20,8 +20,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-			<optional>true</optional>
-		</dependency>
+		</dependency>		
 		<!-- @NotBlank validation数据校验 -->
 		<dependency>
             <groupId>org.springframework.boot</groupId>
