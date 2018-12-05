@@ -8,6 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+
 /**
 * @ClassName: Test
 * @Description: 
@@ -16,39 +17,24 @@ import java.util.concurrent.Future;
 */
 
 public class Test {
-
+		
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		List<List<String>> aa = new ArrayList<>();
 		ExecutorService pool = Executors.newFixedThreadPool(3);
 		Callable<List<List<String>>> callable1 = ()-> {
 			System.out.println("w");
             return aa();
-        };
-        
-        pool.execute(new Runnable() {
-			
-			@Override
-			public void run() {
-				System.out.println("--sdasda");
-				
-			}
-		});      
-
+        };           
         Callable<List<List<String>>> callable2 = ()-> {
         	System.out.println("d");
             return bb();
-        };
-        
-        Future<List<List<String>>> f1 =  pool.submit(callable1);
-        
+        };       
+        Future<List<List<String>>> f1 =  pool.submit(callable1);       
         Future<List<List<String>>> f2 =  pool.submit(callable2);
         aa.addAll(f1.get());
         aa.addAll(f2.get());
         pool.shutdown();
-        
         System.out.println(aa.size());
-        
-        
 	}
 	
 	static List<List<String>> aa(){

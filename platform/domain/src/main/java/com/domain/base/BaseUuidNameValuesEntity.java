@@ -9,6 +9,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
@@ -68,6 +69,14 @@ public abstract class BaseUuidNameValuesEntity<ID extends Serializable> implemen
 
 	@Type(type = "Json", parameters = @Parameter(name = "class", value = "java.util.Map"))
 	private Map<String, String> nameValues;
+	
+	/**
+	 * 版本
+	 */
+	@ApiModelProperty(value = "版本控制号")
+	@Version
+	@Column(name = "optlock", columnDefinition = "integer DEFAULT 0", nullable = false)
+	private Long optlock = 0L;
 
 	public String getName() {
 
@@ -174,6 +183,14 @@ public abstract class BaseUuidNameValuesEntity<ID extends Serializable> implemen
 		return "ID: " + id;
 	}
 
+	public Long getOptlock() {
+		return optlock;
+	}
+
+	public void setOptlock(Long optlock) {
+		this.optlock = optlock;
+	}
+
 	
 //	public String getLocalName() {
 //
@@ -188,5 +205,7 @@ public abstract class BaseUuidNameValuesEntity<ID extends Serializable> implemen
 //
 //		return localName;
 //	}
+	
+	
 
 }

@@ -7,6 +7,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
+
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -52,6 +54,14 @@ public abstract class BaseUuidEntity<ID extends Serializable> implements Seriali
 	@LastModifiedDate
 	@Column(nullable = false)
 	private Date updateDate;
+	
+	/**
+	 * 版本
+	 */
+	@ApiModelProperty(value = "版本控制号")
+	@Version
+	@Column(name = "optlock", columnDefinition = "integer DEFAULT 0", nullable = false)
+	private Long optlock = 0L;
 
 	public ID getId() {
 
@@ -137,5 +147,15 @@ public abstract class BaseUuidEntity<ID extends Serializable> implements Seriali
 
 		return "ID: " + id;
 	}
+
+	public Long getOptlock() {
+		return optlock;
+	}
+
+	public void setOptlock(Long optlock) {
+		this.optlock = optlock;
+	}
+	
+	
 
 }

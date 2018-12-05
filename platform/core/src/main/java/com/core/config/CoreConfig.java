@@ -3,7 +3,7 @@ package com.core.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.core.util.SpringUtils;
+import com.domain.common.util.SpringUtils;
 
 /**
 * @ClassName: CoreConfig

@@ -2,6 +2,8 @@ package com.core.util;
 
 import org.springframework.core.env.Environment;
 
+import com.domain.common.util.SpringUtils;
+
 /**
 * @ClassName: EnvironmentHolder
 * @Description: 

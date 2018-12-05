@@ -1,4 +1,4 @@
-package com.core.util;
+package com.domain.common.util;
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
