@@ -56,5 +56,6 @@
 		<module>pmis</module>
 		<module>es</module>
 		<module>sos</module>
+		<module>rabbitmq</module>
 	</modules>
 </project>

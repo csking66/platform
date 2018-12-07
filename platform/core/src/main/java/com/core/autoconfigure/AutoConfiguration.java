@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 
 import com.core.config.CoreConfig;
+import com.core.config.RabbitMQConfig;
 import com.core.config.Swagger2Config;
 
 /**
@@ -13,7 +14,7 @@ import com.core.config.Swagger2Config;
 *
 */
 @Configuration
-@ImportAutoConfiguration({Swagger2Config.class, CoreConfig.class})
+@ImportAutoConfiguration({Swagger2Config.class, CoreConfig.class, RabbitMQConfig.class})
 public class AutoConfiguration {
 
 }
