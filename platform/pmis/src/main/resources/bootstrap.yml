@@ -1,8 +1,8 @@
 server:
-  port: 7500
+  port: 7600
 spring:
   application:
-    name: sos
+    name: pims
   cloud:
     config:
       uri: http://localhost:7100/

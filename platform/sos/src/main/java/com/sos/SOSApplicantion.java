@@ -3,6 +3,7 @@ package com.sos;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
 * @ClassName: SOSApplicantion
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 *
 */
 @SpringBootApplication
+@EnableEurekaClient
 @EntityScan(basePackages = {"com.domain.sos"})
 public class SOSApplicantion {
 
