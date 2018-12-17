@@ -57,5 +57,6 @@
 		<module>es</module>
 		<module>sos</module>
 		<module>rabbitmq</module>
+		<module>zipkin</module>
 	</modules>
 </project>

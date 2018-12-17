@@ -38,7 +38,7 @@ public class ConsumerCotroller {
 	@PostMapping("/rabbitmq/que")
 	public void handlerQue() throws Exception {
 		String context = "你好,现在时间是 " + LocalDate.now() + "";
-		CorrelationData correlationData = new CorrelationData();
+		CorrelationData correlationData = new CorrelationData("2345");
 		rabbitTemplate.setMandatory(true);//决定消息持久化
 		rabbitTemplate.setReturnCallback(returnCallback);
 		rabbitTemplate.setConfirmCallback(confirmCallback);		
